@@ -1,0 +1,31 @@
+<header></header>
+<h3 class="display-3 m-5 text-center">Your Cart</h3>
+
+<div class="container">
+    <table class="table">
+        <thead class="thead-dark">
+        <tr>
+            <th scope="col">Destination</th>
+            <th scope="col">Start Date</th>
+            <th scope="col">Duration</th>
+            <th scope="col text-right">Price</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let item of items; index as itemId">
+            <td>{{ item.destination }}</td>
+            <td>{{ item.date }}</td>
+            <td>{{ item.duration }}</td>
+            <td>{{ item.price | currency: 'EUR'}}</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="text-right h4"><b>{{ discount }} {{ total | currency: 'EUR' }}</b></td>
+        </tr>
+        </tbody>
+        <button class="button btnBuy" type="submit" (click)="clearCart()">Purchase</button>
+    </table>
+</div>
+<footer></footer>
